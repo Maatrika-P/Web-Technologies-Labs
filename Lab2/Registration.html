@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Catalogue Website - Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <center>
+
+      <h1>Register Yourself!!</h1>
+        <img src="register.jpg" width = 450, height = 350><br>
+      <br>
+      <br>
+      <br>
+        <form name="registration" method="POST" action="register.jsp">
+            <div>
+                <h3>Name: <input type="text" name="uname" id="uname"></h3>
+            </div>
+
+            <div>
+                <h3>Email: <input type="email" name="mail" id="mail"></h3>
+            </div>
+
+            <div>
+                <h3>Password: <input type="password" name="pass" id="pass"></h3>
+            </div>
+
+            <div>
+                <h3>Phone number: <input type="text" name="num" id="num"></h3>
+            </div>
+
+            <div>
+                <h3>Country: <input type="text" name="cname" id="cname"></h3>
+            </div>
+
+            <div>
+                <h3>Address: <input type="text" name="add" id="add"></h3>
+            </div>
+
+
+            <label for="Language"><h3>Choose a Language:</h3></label>
+
+            <select name="Language" id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Telugu">Telugu</option>
+                <option value="Marathi">Marathi</option>
+            </select>
+
+            <div>
+                <h3>Birthdate: <input type="text" name="name" id="name"></h3>
+            </div>
+          
+            <br>
+            <h3>Gender:</h3>
+          
+            <div>
+                Male: <input type="radio"> 
+                Female: <input type="radio">
+                No mention: <input type="radio">
+            </div>
+            <br>
+          <br>
+            <div>
+              Terms & Conditions:<input type="checkbox" name="terms" id="terms">
+            </div>
+
+            <br>
+            <input type="submit" name="register" value="Register">
+        </form>
+    </center>
+</body>
+</html>
