@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Bookstore - Login</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+        }
+    </style>
+    <script> 
+    function validateForm() {
+        var email = document.getElementById("mail").value;
+        var password = document.getElementById("pass").value;
+    
+        var emailp= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailp.test(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+    
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long");
+            return false;
+        }
+    
+        return true;
+    }
+</script>
+
+</head>
+<body>
+    <h1>Login to Your Account</h1>
+
+    <img src="loginpg.jpeg" width="350" height="350"><br>
+    <form name="login" method="POST" action="login.jsp" onsubmit="return validateForm()">
+        <h3>Email: <input type="email" name="mail" id="mail"></h3><br>
+        
+        <h3>Password: <input type="password" name="pass" id="pass"></h3><br>
+        <br>
+        <br>
+        <h3><input type="submit" name="Login" value="Login"></h3>
+    </form>
+
+    <footer>
+        <br>
+        <br>
+        <p>&copy; Maatrika P</p>
+    </footer>
+</body>
+</html>

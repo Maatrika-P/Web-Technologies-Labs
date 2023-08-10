@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Bus Tickets Website - Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <script>
+    function validateForm() {
+        var uname = document.getElementById("uname").value;
+        var email = document.getElementById("mail").value;
+        var password = document.getElementById("pass").value;
+        var phone = document.getElementById("num").value;
+        var birthdate = document.getElementById("travel").value;
+        var birthdate = document.getElementById("till").value;
+        var terms = document.getElementById("terms").checked;
+    
+        var usernamePattern = /^[a-zA-Z0-9_]{3,20}$/;
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        var phonePattern = /^\d{10}$/;
+    
+        if (uname === "" || email === "" || password === "" || phone === "" || travel === "" || till === "") {
+            alert("All fields are required.");
+            return;
+        }
+    
+        if (!uname.match(usernamePattern)) {
+            alert("Username must be alphanumeric and between 3 to 20 characters.");
+            return;
+        }
+    
+        if (!email.match(emailPattern)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+    
+        if (!password.match(passwordPattern)) {
+            alert("Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, one digit, and one special character.");
+            return;
+        }
+    
+        if (!phone.match(phonePattern)) {
+            alert("Please enter a valid 10-digit phone number.");
+            return;
+        }
+    
+        if (!terms) {
+            alert("Please accept the Terms & Conditions.");
+            return;
+        }
+    
+        alert("Registration successful!");
+    }
+</script>
+    
+</head>
+
+<body>
+    <center>
+        <h1>Register Your Bus to get to Places!!</h1>
+        <img src="bustickets.jpeg" width="450" height="350"><br>
+        <br>
+        <br>
+        <br>
+        <form name="registration" method="POST" action="register.jsp">
+            <div>
+                <h3>Name: <input type="text" name="uname" id="uname"></h3>
+            </div>
+
+            <div>
+                <h3>Email: <input type="email" name="mail" id="mail"></h3>
+            </div>
+
+            <div>
+                <h3>Password: <input type="password" name="pass" id="pass"></h3>
+            </div>
+
+            <div>
+                <h3>Phone number: <input type="tel" name="num" id="num"></h3>
+            </div>
+
+            <div>
+                <h3>Travel from <input type="datetime-local" name="travel" id="travel"></h3>
+            </div>
+
+            <div>
+                <h3>Till date <input type="datetime-local" name="till" id="till"></h3>
+            </div>
+
+            <label for="Source"><h3>Choose a Source:</h3></label>
+            <select name="Source" id="Source">
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bombay">Bombay</option>
+                <option value="Kolkata">Kolkata</option>
+            </select>
+
+            <label for="Destination"><h3>Choose a Destination:</h3></label>
+            <select name="Destination" id="destination">
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bombay">Bombay</option>
+                <option value="Kolkata">Kolkata</option>
+            </select>
+
+            <br>
+            <br>
+            <div>
+                Terms & Conditions: <input type="checkbox" name="terms" id="terms">
+            </div>
+
+            <br>
+            <input type="button" value="Register" onclick="validateForm()">
+        </form>
+    </center>
+
+    
+</body>
+</html>
