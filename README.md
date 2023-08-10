@@ -16,7 +16,8 @@ Dive into our meticulously organized assortment of web projects, each poised to 
 
 Begin your exploration by effortlessly cloning this repository to your local machine using the following command:
 
-```bash
+## 👉 Clone the repository:
+
 git clone https://github.com/your-username/web-tech-lab.git
 
 Feel free to traverse the various folders, each dedicated to a specific technology or project. Within each project folder, you'll find comprehensive README files and meticulously crafted code samples to illuminate your path.
