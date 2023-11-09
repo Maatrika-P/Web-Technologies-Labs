@@ -1,0 +1,42 @@
+<!-- Create a login page using html and css and 
+    validate the login with a php page, if it logs in successfully, 
+    print a message for the same or print appropriate message if it doesn't-->
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <title>Online Bookstore - Login</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    form {
+      display: inline-block;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Login to Your Account</h1>
+
+  <img src="loginpg.jpeg" width="350" height="350"><br>
+  <form name="login" method="POST" action="registration.php" onsubmit="return validateForm()">
+    <h3>Email: <input type="email" name="mail" id="mail"></h3><br>
+
+    <h3>Password: <input type="password" name="pass" id="pass"></h3><br>
+    <br>
+    <br>
+    <input type="button" value="Login" onclick="validateForm()">
+  </form>
+
+  <footer>
+    <br>
+    <br>
+    <p>&copy; Maatrika P</p>
+  </footer>
+</body>
+
+</html>
