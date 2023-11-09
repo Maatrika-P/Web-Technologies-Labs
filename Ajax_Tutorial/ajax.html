@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country and State Selection</title>
+</head>
+<body>
+
+<label for="country">Select a Country:</label>
+<select id="country" name="country" onchange="loadStates(this.value)">
+    <option value="">Select a country</option>
+    <option value="India">India</option>
+    <option value="England">England</option>
+    <option value="USA">USA</option>
+</select>
+
+<label for="state">Select a State:</label>
+<select id="state" name="state" disabled>
+    <option value="">Please select a country first</option>
+</select>
+
+<script>
+    function loadStates(country) {
+        var stateSelect = document.getElementById("state");
+        stateSelect.innerHTML = '<option value="">Please select a country first</option>';
+
+        if (country === "") {
+            stateSelect.disabled = true;
+        } else {
+            stateSelect.disabled = false;
+
+            var filename = country.toLowerCase() + '_states.txt';
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var states = xhr.responseText.split("\n");
+                    stateSelect.innerHTML = '';
+
+                    for (var i = 0; i < states.length; i++) {
+                        var option = document.createElement("option");
+                        option.value = states[i];
+                        option.textContent = states[i];
+                        stateSelect.appendChild(option);
+                    }
+                }
+            };
+
+            xhr.open("GET", filename, true);
+            xhr.send();
+        }
+    }
+</script>
+
+</body>
+</html>
